@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart — Made4U</title>
+  <meta name="cart-page" content="true">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+    <header>
+        <a href="../html/home.html#collections" id="collections" class="collections">Go to Collections</a>
+    </header>
+<div class="container">
+  <div class="cart-items" id="cartItems">
+    <div class="cart-title">Your Cart</div>
+    <div id="itemsContainer"></div>
+    <div id="emptyNotice" class="empty" style="display:none">Your cart is empty. Visit <a href=".../html/home.html#collections">Collections</a> to add items.</div>
+  </div>
+
+  <aside class="summary">
+    <h3>Order Summary</h3>
+    <div class="summary-item"><span>Subtotal</span><span id="subtotal">0 EGP</span></div>
+    <div class="summary-item"><span>Shipping</span><span id="shipping">50 EGP</span></div>
+    <div class="summary-item" style="font-weight:700; font-size:18px;"><span>Total</span><span id="total">0 EGP</span></div>
+    <button class="checkout" id="checkoutBtn">Proceed to Checkout</button>
+  </aside>
+</div>
+
+<script src="../js/cart.js"></script>
+
+</body>
+</html>

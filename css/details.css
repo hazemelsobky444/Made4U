@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+  transition: all 0.3s ease;
+}
+html {
+  scroll-behavior: smooth;
+
+}
+body {
+  overflow-x: hidden;
+}
+/* Header styles removed */
+.section-one {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffebde;
+  padding-top: 50px; /* Added padding to push content down since header is gone */
+}
+
+
+
+.quantity-counter {
+    /* الشكل البيضاوي العام */
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 50px; /* لجعله بيضاوياً */
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+.counter-btn {
+    /* تنسيق الأزرار */
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    transition: background-color 0.2s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-btn:hover {
+    background-color: #eee;
+}
+
+.quantity-value {
+    /* تنسيق عرض الرقم */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 15px; /* مسافة داخلية بين الزر والرقم */
+    min-width: 20px;
+    text-align: center;
+}
+
+/* تنسيق خاص لإظهار زر النقصان باهتاً عندما تكون القيمة 1 */
+.counter-btn[disabled] {
+    color: #ccc;
+    cursor: not-allowed;
+    background-color: transparent !important;
+}
+
+/* ... الكود الحالي في details.css ... */
+
+/* إضافة تنسيق بسيط لفقرة الوصف الجديدة */
+.description-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* ... باقي كود details.css ... */
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.product-img {
+    flex-shrink: 0; 
+}
+.product-img img {
+    width: 480px;
+    max-width: 100%; 
+    height: auto;
+    border-radius: 15px;
+    margin-right: 100px;
+}
+.product-name {
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+.price {
+    font-size: 25px;
+}
+.text {
+    flex-grow: 1;
+    min-width: 300px; 
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.sizes {
+    display: inline-block;
+    margin-top: 25px;
+}
+.sizes a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 10px 0; 
+    width: 50px;
+    height: 35px;
+    text-decoration: none;
+    color: #1e1e1e;
+    border: 1px solid #1e1e1e;
+    border-radius: 15px;
+    background-color: #1e1e1e;
+    color: white;
+}
+.sizes a:hover {
+    background-color: transparent;
+    border: none;
+    color: #1e1e1e;
+}
+.bey-details{
+    margin-top: 30px;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    align-items: center;
+}
+
+.bey-button,
+.cart-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    border: 1px solid #1e1e1e;
+    border-radius: 15px;
+    text-decoration: none;
+    width: 150px; 
+    flex-grow: 1;
+    max-width: 212px;
+    margin-left: 0; 
+}
+
+.bey-button {
+    background-color: #1e1e1e;
+    color: white;
+}
+.bey-button:hover {
+    background-color: transparent;
+    color: #1e1e1e;
+}
+.cart-button{
+    background-color: transparent;
+    color: #1e1e1e;
+}
+.cart-button:hover {
+    background-color: #1e1e1e;
+    color: white;
+}
+.cash {
+    margin-top: 50px;
+}
+.cash svg, .cash img {
+    margin-right: 25px;
+}
+
+.Description .title {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+.seller-infos {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+.Description .title-prg {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+}
+.Description .title-prg:hover {
+    background-color: transparent;
+    color: #1e1e1e;
+    border: 1px solid #1e1e1e;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* 1. شاشات الآيباد الأفقية (Tablet Landscape - Max 1100px) 
+   التصميم يبقى أفقياً ولكن بمسافات أصغر */
+@media (max-width: 1100px) {
+    .content {
+        padding: 20px;
+    }
+    .product-img img {
+        width: 400px; /* تصغير عرض الصورة قليلاً */
+        margin-right: 50px; /* تقليل المسافة اليمنى */
+    }
+    .text {
+        margin-left: 20px; /* تقليل المسافة اليسرى */
+        min-width: 350px;
+    }
+}
+
+/* 2. شاشات الآيباد العمودية والشاشات الأصغر (Tablet Portrait - Max 850px) 
+   *** نقطة التحول للوضع العمودي *** */
+@media (max-width: 850px) {
+    .content {
+        flex-direction: column; /* تحويل الوضع إلى عمودي هنا */
+        align-items: center;
+    }
+    .product-img {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    .product-img img {
+        width: 100%;
+        max-width: 450px; /* تحديد أقصى عرض للصور في الوضع العمودي */
+        margin-right: 0;
+    }
+    .text {
+        margin-left: 0;
+        padding: 0 20px;
+        max-width: 450px;
+        min-width: 0;
+    }
+    .Description {
+        width: 100%;
+    }
+    .bey-details {
+        flex-direction: row; /* إبقاء الأزرار أفقية قدر الإمكان في هذا الحجم */
+        justify-content: space-around;
+        gap: 10px;
+    }
+    .bey-button,
+    .cart-button {
+        width: 45%; 
+        max-width: 200px; 
+    }
+    .quantity-counter {
+        margin: 10px auto;
+    }
+}
+
+
+/* 3. شاشات الموبايل (Max 600px) */
+@media (max-width: 600px) {
+    .section-one {
+        padding-top: 20px;
+    }
+    .product-name {
+        font-size: 24px;
+        padding-bottom: 15px;
+    }
+    .price {
+        font-size: 20px;
+    }
+    .product-img img {
+        max-width: 90%;
+    }
+    .text {
+        max-width: 90%;
+    }
+    .sizes a {
+        width: 40px;
+        height: 30px;
+        font-size: 14px;
+        margin: 5px;
+    }
+    .bey-details {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+    .quantity-counter {
+        order: -1; 
+        margin-bottom: 10px;
+        margin: 0 auto 10px auto;
+    }
+    .bey-button,
+    .cart-button {
+        width: 100%;
+        max-width: 100%; 
+        margin-left: 0;
+    }
+    .cash {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .cash svg, .cash img {
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+}
+
+/* 4. أصغر شاشات الموبايل (max-width: 400px) */
+@media (max-width: 400px) {
+    .product-img img {
+        max-width: 100%;
+        border-radius: 0;
+    }
+    .text {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .Description .title {
+        font-size: 20px;
+    }
+}

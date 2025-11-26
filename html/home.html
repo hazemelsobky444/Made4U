@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made4U</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section class="home-page">
+        <header>
+            <div class="logo">
+                <a href=""><img src="../media/ChatGPT Image Oct 27, 2025, 01_46_08 PM.png" alt=""></a>
+            </div>
+            
+            <nav class="desktop-nav">
+                <a href="#collections" class="collections">Collections</a>
+                <a href="" class="about-us">About Us</a>
+                <a href="" class="contact-us">Contact Us</a>
+            </nav>
+            
+            <div class="icons desktop-icons">
+                <a href="../html/cart.html" class="wishlist">Cart</a>
+                <a href="../html/login.html" class="login-singup">Login</a>
+                <a href="../html/signup.html">Sign Up</a>
+            </div>
+
+            <i class="fa-solid fa-bars menu-toggle"></i>
+        </header>
+
+        <div class="sidebar">
+             <i class="fa-solid fa-xmark sidebar-close"></i> <h3 class="sidebar-title">Menu</h3>
+            <div class="sidebar-nav">
+                <a href="#collections" class="collections">Collections</a>
+                <a href="" class="about-us">About Us</a>
+                <a href="" class="contact-us">Contact Us</a>
+            </div>
+            
+            <h3 class="sidebar-title">Account</h3>
+            <div class="sidebar-icons">
+                 <a href="../Html files/cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                <a href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+                <a href="../Html files/signup.html"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+            </div>
+        </div>
+
+        <div class="caption">
+            <div class="search-container">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search..." />
+                <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                </div>
+            </div>
+            <div class="glow"></div>
+            </div>
+            <div class="par">The trusted platform connecting customers and top factories.</div>
+        </div>
+    </section>
+
+
+
+
+    <!-- collections section  -->
+    <section class="second-section" id="collections">
+        <div class="second-section-title">
+            <p class="p-title">Collections</p>
+        </div>
+
+        <!-- filter buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="men">Men</button>
+            <button class="filter-btn" data-filter="women">Women</button>
+        </div>
+        <!-- cards container  -->
+        <div class="cards-frame">
+            <!-- man product card  -->
+            <div class="card" data-category="men">
+                <div class="card__content">
+                    <img class="a" src="https://fashionclinik.com/wp-content/uploads/2024/03/High-Density-Collar-T-Shirt-for-Men5-scaled.jpg" alt="Men T-Shirt 1" class="product-img">
+                    <div class="info">
+                        <span class="price"></span>
+                        <button class="add-to-cart"
+                                data-id="1"
+                                data-name="Men T-Shirt"
+                                data-price="520"
+                                data-image="https://fashionclinik.com/wp-content/uploads/2024/03/High-Density-Collar-T-Shirt-for-Men5-scaled.jpg"
+                                data-sizes="M,L"
+                                title="Add to Cart">
+                            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                        </button>
+                    </div>
+                    <a href="details.html" class="btn-seller">Details</a>
+                </div>
+            </div>
+             
+            <!-- woman product card  -->
+            <div class="card" data-category="women">
+                <div class="card__content">
+                    <img class="a" src="https://www.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=med-s3/d-i-o/Tshirts/Women/tshirt_hs_oversized_women_pat_d28_o.jpg&resizeTo=600" alt="Women Dress 1" class="product-img">
+                    <div class="info">
+                        <span class="price"></span>
+                        <button class="add-to-cart"
+                                data-id="2"
+                                data-name="Women Dress"
+                                data-price="400"
+                                data-image="https://www.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=med-s3/d-i-o/Tshirts/Women/tshirt_hs_oversized_women_pat_d28_o.jpg&resizeTo=600"
+                                data-sizes="S,M"
+                                title="Add to Cart">
+                            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                        </button>
+                    </div>
+                    <a href="" class="btn-seller" target="_blank">Details</a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="pagination-buttons"></div>
+
+    </section>
+
+    <!-- <section class="about-page">
+        <div class="about-title">
+            <p>About Us</p>
+        </div>
+        <div class="top">
+            <div class="who">
+                <p class="num">1.</p>
+                <p class="num">Who we are</p>
+                <p class="num">hkjfhgfkjdghkjfdhkhgfhkgjdf</p>
+            </div>
+            <div class="who">
+                <p class="num">2.</p>
+                <p class="num">What we do</p>
+                <p class="num">hkjfhgfkjdghkjfdhkhgfhkgjdf</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="who">
+                <p class="num">3.</p>
+                <p class="num">How do we help</p>
+                <p class="num">hkjfhgfkjdghkjfdhkhgfhkgjdf</p>
+            </div>
+            <div class="who">
+                <p class="num">4.</p>
+                <p class="num">Create seccess story</p>
+                <p class="num">hkjfhgfkjdghkjfdhkhgfhkgjdf</p>
+            </div>
+        </div>
+    </section> -->
+
+
+    <script src="../js/main.js">
+
+    </script>
+</body>
+</html>
