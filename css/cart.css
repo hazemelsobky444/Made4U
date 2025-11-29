@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: cursive;
+  font-family: 'Josefin Sans', sans-serif;
   transition: all 0.3s ease;
 }
 :root{
@@ -17,7 +17,6 @@
 }
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
     background: var(--bg);
     color:var(--primary-text);
 }

@@ -1,0 +1,459 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  transition: all 0.3s ease;
+}
+html {
+  scroll-behavior: smooth;
+
+}
+body {
+  overflow-x: hidden;
+}
+
+
+
+/* header box code */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffebde;
+    
+}
+/* logo */
+.logo a img {
+    width: 150px;
+}
+/* navigation bar (لشاشات الكمبيوتر) */
+.desktop-nav { /* تم تغيير .nav إلى .desktop-nav */
+    display: flex;
+    justify-content: center;
+}
+.desktop-nav a{
+    margin-right: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: #251a1e;
+
+}
+.desktop-nav a:hover {
+    text-decoration: underline;
+}
+/* أيقونات Header (لشاشات الكمبيوتر) */
+.icons.desktop-icons a{ /* تم تغيير .icons إلى .icons.desktop-icons */
+    margin-left: 15px;
+    color: #251a1e;
+    text-decoration: none;
+
+}
+.icons.desktop-icons a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* أيقونة قائمة الهامبرغر - مخفية افتراضياً (للشاشات الكبيرة) */
+.menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* مخفية بشكل افتراضي */
+    color: #251a1e;
+    z-index: 110;
+    margin-left: 20px; /* مسافة عن حافة الـ header */
+}
+
+/* القائمة الجانبية (Sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px; /* مخفية خارج الشاشة */
+    width: 280px;
+    height: 100%;
+    background-color: #453b3f;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* تأكد أنها فوق كل شيء */
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.open {
+    right: 0; /* تظهر عند إضافة كلاس open */
+}
+
+.sidebar-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #ffebde;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.sidebar-title {
+    color: #ffebde;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav a, .sidebar-icons a {
+    display: block;
+    padding: 10px 5px;
+    text-decoration: none;
+    color: #ffebde;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-icons a:hover {
+    color: #ff7f50; 
+}
+.sidebar-icons {
+    margin-top: 10px;
+}
+.sidebar-icons a i {
+    margin-right: 10px;
+}
+
+/* -------------------------------------- */
+/* تحكم في إظهار القائمة حسب حجم الشاشة */
+/* -------------------------------------- */
+
+/* للشاشات أقل من أو تساوي 992px: إخفاء التنقل والعناصر العادية، إظهار أيقونة القائمة */
+@media (max-width: 992px) {
+    .desktop-nav,
+    .desktop-icons {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* للشاشات الأكبر من 992px: إظهار التنقل والعناصر العادية، إخفاء أيقونة القائمة قاطع */
+@media (min-width: 993px) {
+    .desktop-nav,
+    .desktop-icons {
+        display: flex; /* حسب تصميمك */
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+}
+
+
+
+
+
+.faq-section {
+    padding: 70px 20px;
+    background: #ffebde; /* درجة ناعمة مناسبة للموقع */
+    border-radius: 10px;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.faq-search {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 25px;
+}
+
+
+.faq-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 10px auto 30px;
+    color: #555;
+    font-size: 16px;
+}
+
+/* -------------------------------------- */
+/* التنسيق الجديد للتحكم في ارتفاع الأسئلة (Read More) */
+/* -------------------------------------- */
+.faq-content-wrapper {
+    max-width: 900px;
+    margin: auto;
+    position: relative; /* لتموضع زر 'Read More' */
+    overflow: hidden; /* لإخفاء الأسئلة الزائدة */
+    /* ارتفاع افتراضي لسطح المكتب - تقريباً 3 أسئلة */
+    max-height: 550px; 
+    transition: max-height 0.7s ease-in-out;
+}
+
+/* حالة التوسع (يتم تفعيلها بواسطة JavaScript) */
+.faq-content-wrapper.expanded {
+    max-height: 3000px; /* قيمة كبيرة بما يكفي لاستيعاب كل المحتوى */
+}
+
+/* زر Read More */
+.read-more-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #251a1e;
+    color: #ffebde;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(37, 26, 30, 0.5);
+    z-index: 10;
+    width: 90px;
+    height: 50px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.read-more-btn:hover {
+    background: #453b3f;
+}
+
+/* التدرج (Fade effect) فوق زر Read More لإخفاء قص حاد للأسئلة */
+.faq-content-wrapper:not(.expanded)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px; /* ارتفاع التدرج */
+    background: linear-gradient(to top, #ffebde, rgba(255, 235, 222, 0)); /* لون الخلفية #ffebde */
+    pointer-events: none; 
+    z-index: 9;
+}
+
+.faq-questions {
+    /* تم إزالة max-width و margin: auto; لأنه تم نقلها إلى .faq-content-wrapper */
+    margin: 0;
+    max-width: none;
+}
+/* -------------------------------------- */
+
+.faq-q {
+    margin-bottom: 25px;
+    background: #fff;
+    padding: 18px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.faq-q h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #333;
+}
+
+.faq-q p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px){
+    
+    /* Media Queries لضبط الارتفاع حسب حجم الشاشة */
+    .faq-content-wrapper {
+        max-height: 400px; /* تابلت/موبايل كبير (تقريباً 3-4 أسئلة) */
+    }
+}
+@media (max-width: 480px) {
+    .faq-content-wrapper {
+        max-height: 450px; /* موبايل صغير */
+    }
+    .read-more-btn {
+        padding: 10px 20px;
+        width: 90%;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+.section-divider {
+    width: 80%;
+    max-width: 1000px;
+    height: 2px;
+    background-color: #251a1e;
+    margin: 40px auto; /* مسافة أعلى وأسفل الخط، وتوسيطه */
+    opacity: 0.2; /* لجعله ناعماً قليلاً */
+}
+
+
+
+footer {
+  width: auto;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffebde;
+}
+.left-items {
+  display: block;
+  margin-left: 60px;
+}
+.left-items-one {
+  display: grid;
+  margin-top: 50px;
+}
+.left-items-one a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 12px;
+}
+.left-items-one a:hover {
+  text-decoration: underline;
+}
+.left-items-two p {
+  margin-top: 85px;
+  font-size: 10px;
+}
+.right-items {
+  margin-right: 60px;
+}
+.right-items p {
+  margin-bottom: 19px;
+}
+.social-media {
+  margin-top: 25px;
+}
+.social-media a {
+  margin-right: 15px;
+}
+
+.input {
+  min-height: 40px;
+  max-width: 250px;
+  padding: 0 1rem;
+  color: black;
+  font-size: 15px;
+  border: 1px solid #251a1e;
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.button--submit {
+  min-height: 40px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #251a1e;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+
+
+.input:focus, .input:focus-visible {
+  border-color: #251a1e;
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  footer {
+      flex-direction: column; /* تحويل التخطيط إلى عمودي */
+      align-items: center; /* توسيط العناصر */
+      padding: 40px 20px; /* زيادة التباعد الرأسي وتقليل الأفقي */
+  }
+
+  .left-items {
+      margin: -37px; /* إزالة الهامش الأيسر */
+      padding-bottom: 30px; /* إضافة مسافة تفصل عن الجزء الأيمن */
+      text-align: center;
+      width: 100%;
+  }
+
+  .left-items-one {
+      display: flex; /* تحويل الروابط إلى صف أفقي */
+      flex-wrap: wrap; /* السماح بالالتفاف */
+      justify-content: center; /* توسيط الروابط */
+      margin-top: 20px;
+      gap: 10px 20px; /* تباعد بين الروابط */
+  }
+  
+  .left-items-one a {
+      padding-bottom: 0;
+      font-size: 12;
+  }
+
+  .left-items-two p {
+      margin-top: 30px; /* تقليل الهامش العلوي */
+      text-align: center;
+      font-size: 9px;
+  }
+
+  .right-items {
+      margin: 0; /* إزالة الهامش الأيمن */
+      padding-top: 30px;
+      text-align: center;
+      width: 100%;
+      max-width: 350px; /* تحديد أقصى عرض لـ right-items في الجوال */
+  }
+
+  .right-items p {
+      text-align: center;
+  }
+  
+  .input-container {
+      justify-content: center; /* توسيط حقل الإدخال والزر */
+  }
+
+  .input, .button--submit {
+      font-size: 14px;
+  }
+
+  .social-media {
+      margin-top: 20px;
+      justify-content: center; /* توسيط أيقونات السوشيال ميديا */
+  }
+}
+
+/* شاشات صغيرة جدًا (أقل من 400px) */
+@media (max-width: 400px) {
+  .input-container {
+      flex-direction: column; /* وضع الإدخال والزر فوق بعض */
+      gap: 10px;
+      align-items: center;
+  }
+  .input {
+      max-width: 220px; /* الإدخال يأخذ عرض الأب */
+      border-radius: 6px; /* جعل الحواف مستديرة بالكامل */
+  }
+  .button--submit {
+      width: 65px;
+      max-width: 250px; /* تحديد عرض مناسب للزر */
+      border-radius: 6px; /* جعل الحواف مستديرة بالكامل */
+  }
+}
